@@ -1,16 +1,18 @@
 package ContactsManagerProject;
-
 import java.util.Scanner;
+
 import java.io.IOException;
 
 public class Input {
     private Scanner scanner;
 
     public Input(){
+
         this.scanner = new Scanner(System.in);
     }
 
     public String getString(){
+
         return scanner.nextLine();
     }
 
@@ -23,6 +25,11 @@ public class Input {
             return getInt();
         }
     }
+//  Will add to PSVM
+//    public char getChar(Scanner charScanner){
+//
+//        return System.out.println(getString().startsWith());
+//    }
 
     //int
 
