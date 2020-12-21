@@ -1,3 +1,5 @@
+package ContactsManagerProject;
+
 //Why is this extended?
 public class mainMenu extends menuChoices {
     public static void showMenu(){
@@ -10,7 +12,7 @@ public class mainMenu extends menuChoices {
                     "4. Delete contact" +
                     "5. Exit\n");
             //This will run off of input
-            int userChoice = input.getInt(1,5);
+            int userChoice = Input.getInt(1,5);
 
 
             switch(userChoice){
@@ -29,7 +31,7 @@ public class mainMenu extends menuChoices {
                     break;
                 case 3:
                     //Will run off of input
-                    String findName = input.getString("Choose a name:");
+                    String findName = Input.getString("Choose a name:");
                     System.out.println("\n");
                     //CRUD
                     searchContacts(findName);
