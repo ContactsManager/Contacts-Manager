@@ -1,13 +1,13 @@
 package ContactsManagerProject;
 
 import java.io.IOException;
+import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.nio.file.StandardOpenOption;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.nio.file.Files;
-import java.util.Locale;
-
 
 public class menuChoices {
     static Input input = new Input();
@@ -51,7 +51,7 @@ public class menuChoices {
         List<String> strList;
         String nameTitle = "            Name";
         String numTitle = "           Number";
-        System.out.println("%-17s | %s \n", nameTitle, numTitle);
+        System.out.printf("%-17s | %s \n", nameTitle, numTitle);
         System.out.println("---------------------");
         try{
             strList = Files.readAllLines(p);
@@ -65,7 +65,35 @@ public class menuChoices {
         }
     }
 
+    public static void deleteContact(){
+        System.out.println("Choose the contact you would like to remove:");
+        List<String> lines = null;
+        int userInput;
 
+        try {
+            lines = Files.readAllLines(p);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        userInput = input.getInt(1, lines.size());
+
+        List<String> newList = new ArrayList<>();
+        for (String line : lines) {
+            if (line.equals(lines.get(userInput - 1))) {
+                continue;
+            }
+            newList.add(line);
+
+            try{
+                Files.write(
+                    p, newList);
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }
 
 
 
