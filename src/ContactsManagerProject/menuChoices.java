@@ -3,8 +3,10 @@ package ContactsManagerProject;
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.Arrays;
 import java.util.List;
 import java.nio.file.Files;
+import java.util.Locale;
 
 
 public class menuChoices {
@@ -27,4 +29,46 @@ public class menuChoices {
             e.printStackTrace();
         }
     }
+
+    public static void newContact() {
+        String name = input.getString("Provide New Contact Name");
+        System.out.println("Enter Phone number for contact (digits only");
+        String num = input.getString(7,10);
+        Contact addContact = new Contact(name, num);
+
+        try{
+            Files.write(
+                    p,
+                    Arrays.asList(String.format("%-14s | %s", addContact.getName(), addContact.getNumber())),
+                    StandardOpenOption.APPEND
+            );
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public static void searchContacts(String name) {
+        List<String> strList;
+        String nameTitle = "            Name";
+        String numTitle = "           Number";
+        System.out.println("%-17s | %s \n", nameTitle, numTitle);
+        System.out.println("---------------------");
+        try{
+            strList = Files.readAllLines(p);
+            for (int i = 0; i < strList.size(); i++) {
+                if (strList.get(i).toLowerCase().contains(name.toLowerCase())) {
+                    System.out.println((i + 1) + ": " + strList.get(i) + "\n");
+                }
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+
+
+
+
+
+
 }

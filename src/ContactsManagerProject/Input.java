@@ -16,6 +16,27 @@ public class Input {
         return scanner.nextLine();
     }
 
+    public String getString(String prompt){
+        if(prompt.isEmpty()){
+            System.out.println("Type here: ");
+        } else {
+            System.out.println(prompt);
+        }
+        return getString();
+    }
+
+    public String getString(int num2, int num1){
+        long userNum = getLong();
+        String userInput = String.valueOf( userNum);
+
+        if (userInput.length() == num2 || userInput.length() == num1){
+            return userInput;
+        }else {
+            System.out.println("Invalid number, must be 7 or 10 digits.");
+            return getString(num2, num1);
+        }
+    }
+
 //    public int getInt(){
 //        try{
 //            int userNumber = Integer.valueOf( scanner.nextLine() );
@@ -67,4 +88,20 @@ public class Input {
 
     //string
     //char
+
+    public long getLong(){
+        try{
+            long userNum = Long.valueOf( scanner.nextLine() );
+            return userNum;
+
+        }catch (Exception e){
+            System.out.println("Invalid input.");
+            return getLong();
+        }
+    }
+
+
+
+
+
 }
