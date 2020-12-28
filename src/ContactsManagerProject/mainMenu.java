@@ -24,7 +24,7 @@ public class mainMenu extends menuChoices {
                     break;
 
                 case 2:
-                    System.out.println("No worky");
+                    System.out.println("Not working.");
                             break;
 //                case 2:
 //                    //Will run off of input
