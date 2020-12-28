@@ -11,7 +11,7 @@ import java.util.List;
 
 public class menuChoices {
     static Input input = new Input();
-    static Path p = Paths.get("src", "data", "contacts.txt");
+    static Path p = Paths.get("src", "ContactsManagerProject", "contacts.txt");
 
 
     public static void showContacts() {
