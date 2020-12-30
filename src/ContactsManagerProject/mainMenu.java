@@ -8,8 +8,8 @@ public class mainMenu extends menuChoices {
         do {
             System.out.println("1. View contacts. \n " +
                     "2. Add contact \n" +
-                    "3. Search contact (name)" +
-                    "4. Delete contact" +
+                    "3. Search contact (name)\n" +
+                    "4. Delete contact\n" +
                     "5. Exit\n");
             //This will run off of input
             int userChoice = input.getInt(1, 5);
@@ -22,10 +22,6 @@ public class mainMenu extends menuChoices {
                     //Will run off of input
                     showContacts();
                     break;
-
-//                case 2:
-//                    System.out.println("Not working.");
-//                            break;
                 case 2:
                     //Will run off of input
                     newContact();
@@ -34,14 +30,14 @@ public class mainMenu extends menuChoices {
                     showContacts();
                     System.out.println("\n");
                     break;
-//                case 3:
-//                    //Will run off of input
-//                    String findName = Input.getString("Choose a name:");
-//                    System.out.println("\n");
-//                    //CRUD
-//                    searchContacts(findName);
-//                    System.out.println("\n");
-//                    break;
+                case 3:
+                    //Will run off of input
+                    String findName = input.getString("Choose a name:");
+                    System.out.println("\n");
+                    //CRUD
+                    searchContacts(findName);
+                    System.out.println("\n");
+                    break;
                 case 4:
                     System.out.println("\n");
                     showContacts();

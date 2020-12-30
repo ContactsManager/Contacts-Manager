@@ -11,7 +11,7 @@ import java.util.List;
 
 public class menuChoices {
     static Input input = new Input();
-    static Path p = Paths.get("src", "ContactsManagerProject", "contacts.txt");
+    static Path p = Paths.get("src", "data", "contacts.txt");
 
 
     public static void showContacts() {
@@ -23,7 +23,7 @@ public class menuChoices {
         try {
             strList = Files.readAllLines(p);
             for (int i = 0; i < strList.size(); i++) {
-                System.out.printf((i + 1) + " : " + strList.get(i) + "\n");
+                System.out.print((i + 1) + " : " + strList.get(i) + "\n");
             }
         } catch (IOException e) {
             e.printStackTrace();
