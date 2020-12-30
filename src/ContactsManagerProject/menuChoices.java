@@ -34,12 +34,12 @@ public class menuChoices {
         String name = input.getString("Provide New Contact Name");
         System.out.println("Enter Phone number for contact (digits only");
         String num = input.getString(7,10);
-        Contact addContact = new Contact(name, num);
+        addContact newContact = new addContact(name, num);
 
         try{
             Files.write(
                     p,
-                    Arrays.asList(String.format("%-14s | %s", addContact.getName(), addContact.getNumber())),
+                    Arrays.asList(String.format("%-14s | %s", newContact.getName(), newContact.getNumber())),
                     StandardOpenOption.APPEND
             );
         } catch (IOException e) {
@@ -99,4 +99,4 @@ public class menuChoices {
 
 
 
-}
+
