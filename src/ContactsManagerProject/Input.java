@@ -55,19 +55,6 @@ public class Input {
         }
     }
 
-    public int getInt(){
-        try{
-            int userNum = Integer.valueOf( scanner.nextLine() );
-            return userNum;
-
-        }catch (Exception e){
-            System.out.println("Not valid integer");
-            return getInt();
-        }
-    }
-
-
-
     public long getLong(){
         try{
             long userNum = Long.valueOf( scanner.nextLine() );
@@ -76,52 +63,6 @@ public class Input {
         }catch (Exception e){
             System.out.println("Invalid input.");
             return getLong();
-        }
-    }
-
-
-
-    public double getDouble(double min, double max){
-
-        System.out.format("Choose number between %s and %s: \n", min, max);
-        try{
-            double userDbl = Double.valueOf(scanner.nextLine());
-            if ( userDbl >= min && userDbl <= max){
-                return userDbl;
-            }else {
-                System.out.format("invalid number, choose number between %s and %s: \n", min, max);
-                return getDouble(min, max);
-            }
-        }catch (Exception e){
-            System.out.println("Not Valid Double");
-            return getDouble(min,max);
-        }
-    }
-
-    public double getDouble(){
-        try{
-            return Integer.valueOf(scanner.nextLine());
-        }catch (Exception e){
-            System.out.println("Not valid double");
-            return getDouble();
-        }
-    }
-
-    public int getBinary(){
-        try {
-            return Integer.valueOf(scanner.nextLine(),2);
-        }catch (Exception e){
-            System.out.println("Invalid Binary");
-            return getBinary();
-        }
-    }
-
-    public int getHex(){
-        try {
-            return Integer.valueOf(scanner.nextLine(),16);
-        }catch (Exception e){
-            System.out.println("Invalid Hex");
-            return getHex();
         }
     }
 
