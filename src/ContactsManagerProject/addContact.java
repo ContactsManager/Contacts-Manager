@@ -24,9 +24,9 @@ public class addContact {
     public void setNumber(String number){
         String newNum = "";
         if(number.length() == 7){
-            newNum = number.replaceFirst("(\\d{3})(\\d+)", "$1-$2");
+            newNum = number.replaceFirst("(\\d{3})(\\d+)", "$1-$2"); //selects first 3 digits, adds remaining to the end.
         }else if(number.length() == 10){
-            newNum = number.replaceFirst("(\\d{3})(\\d{3})(\\d+)", "($1) $2-$3");
+            newNum = number.replaceFirst("(\\d{3})(\\d{3})(\\d+)", "($1) $2-$3"); // selects first 3 digits, second 3 digits, adds remaining to the end.
         }
         this.number = newNum;
     }
