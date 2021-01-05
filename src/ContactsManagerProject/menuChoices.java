@@ -32,7 +32,7 @@ public class menuChoices {
 
     public static void newContact() {
         String name = input.getString("Provide New Contact Name");
-        System.out.println("Enter Phone number for contact (digits only");
+        System.out.println("Enter Phone number for contact (digits only.)");
         String num = input.getString(7,10);
         addContact newContact = new addContact(name, num);
 

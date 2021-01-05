@@ -1,6 +1,5 @@
 package ContactsManagerProject;
 
-import ContactsManagerProject.mainMenu;
 
 public class Run extends mainMenu {
 
